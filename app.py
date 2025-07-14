@@ -6,6 +6,10 @@ app = Flask(__name__)
 matches = []
 leaderboard = {}
 
+@app.route('/')
+def home():
+    return "Welcome to COD 1v1 Leaderboard API! Use /leaderboard or /matches endpoints."
+
 @app.route('/submit_match', methods=['POST'])
 def submit_match():
     data = request.json
